@@ -147,7 +147,7 @@ var store = {
    myProducts: [],
 
     filter: {
-        category:"Shoes",
+        category:"",
 },
 
 },
@@ -186,7 +186,7 @@ getters:{
     for(var i = 0; i < products.length; i++){
         var product = products[i];
 
-        if(!App.helpers.includes(categories, product.category.name)){
+        if(!App.helpers.includes(categories, product.category.name)){//!
        
         categories.push(product.category);
     } 
@@ -207,7 +207,7 @@ products: function() {
             
             if (filter.category && filter.category !== product.category.name) {
                // console.log("[NÃO!!!]]...", product.category);
-                continue
+                continue;
 
             }
 
@@ -217,8 +217,32 @@ products: function() {
 
 
         return res;
-    }
+    },
 },
+
+    // hiddenProductsByCategory(){
+    //     var products = store.state.products;
+    //     var filter = store.state.filter;
+
+    //     var res = [];
+
+    //     for(var i = 0; i < products.length; i++){
+    //         var product = products[i]
+
+            
+    //         if (filter.category === product.category.name) {
+    //            // console.log("[NÃO!!!]]...", product.category);
+
+    //         res.push(product); continue;
+    //     }
+
+    // }
+
+
+        // return res;
+
+//     },
+// },
 
 
 
@@ -255,5 +279,11 @@ mutations: {
         };
         store.state.myProducts.push(myProduct);
     },
+
+    setCategory: function(categoryName) {
+        store.state.filter.category = categoryName
+
+
+    }
   },
 };

@@ -6,11 +6,11 @@ var App = {
         this.controllers.renderCategoryFilter();
         this.controllers.renderAllProducts();
         
-        console.log(this.store.state.products);
-        for (var i = 0; i< this.store.state.products.length; i++) {
-            var product = this.store.state.products [i];
-            console.log("[]",product);
-        }
+        // console.log(this.store.state.products);
+        // for (var i = 0; i< this.store.state.products.length; i++) {
+        //     var product = this.store.state.products [i];
+        //     console.log("[]",product);
+        // }
 
         console.log("Fim do app");
     },
@@ -42,4 +42,4 @@ var App = {
 };
 
 
-App.init();
+//App.init();

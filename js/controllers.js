@@ -131,25 +131,31 @@ var controllers = {
             // el.appendChild(img);
 
             // console.log ("[Categorias]...", category, el)
-            App.elements.iconsContainer.appendChild(el);
+            App.elements.bodyCategories.appendChild(el);
         }
     },
 
+    removeAllProducts: function() {
+        App.elements.bodyProducts.innerHTML = "";
+        App.elements.products = {};
+    },
+    
     renderAllProducts: function() {
         console.log("Vamos renderizar todos os produtos");
-        var products = App.store.state.products;
-        var filter = App.store.state.filter
-
-     
+        var products = App.store.getters.products();
+         
 
         console.log(products.length);
             for (var i = 0; i < products.length; i++) {
             var product = products[i];
-            var el = this.createProduct(product);
 
-            App.elements.products[product.id] = el;
-            App.elements.bodyProducts.appendChild(el);
-            }
+            if (!App.elements.products[product.id]) {
+                var el = this.createProduct(product);
+                App.elements.products[product.id] = el;
+                App.elements.bodyProducts.appendChild(el);
+
+             }
+        }
 
             console.log ("Todos os produtos renderizados");   
     }, 
@@ -297,7 +303,7 @@ var controllers = {
 
     },
 
-        createCategory: function (category){
+    createCategory: function (category){
             var el = document.createElement("div");
 
             var name = document.createElement("span");
@@ -310,12 +316,46 @@ var controllers = {
 
             el.onclick = function (){
                 console.log("[Clicou]...", category);
+
+                App.store.mutations.setCategory(category.name);
+
+                App.controllers.removeAllProducts();
+                App.controllers.renderAllProducts();
+
+              //  App.controllers.renderAllProducts();
+              //App.controllers.hideProduct();
+
             };
 
-            console.log("[Categoria]...", category, el);
+            //console.log("[Categoria]...", category, el);
 
             return el;
 
         },
+    };
 
-};
+//         hideProduct: function () {
+//             var hidelist = App.store.getters.hiddenProductsByCategory();
+//             var productsEl = App.elements.products;
+//             var productsElKeys = Object.keys(productsEl);
+
+
+//             // console.log("[productsEl]...", productsEl);
+//             // console.log("[productsElKeys]...", productsElKeys);
+//             // console.log("[hidelist]...", hidelist);
+//             //console.log ("[]...", App.store.getters.hiddenProductsByCategory())
+
+//             for (var i = 0; i < productsElKeys.length; i++){
+//                 var productId = productsElKeys[i];
+//                 var product = productEl[productId];
+               
+//                if (hidelist.find((p) => p.id === parseInt(productId))) {
+//                 product.style.display = "none";
+//                } else {
+//                    product.style.display = "block";
+//                }
+//             }
+
+
+//         },
+// };
