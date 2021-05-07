@@ -11,8 +11,11 @@ body: document.createElement("div"),
 category: document.createElement("div"),
 categoryContainer: document.createElement("div"),
 
+bodyCategories: document.createElement("div"),
+
 iconsContainer: document.createElement("div"),
 iconsbody: document.createElement("div"),
+iconsimg:document.createElement("img"),
 
 bodyImgClothes:document.createElement("img"),
 bodyImgShoes: document.createElement("img"),

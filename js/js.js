@@ -15,21 +15,24 @@ var App = {
         console.log("Fim do app");
     },
 
-    // helpers: {
-    //     childFInder: function(productId, key) {
-    //         const div = App.elements.products[productId];
-    //         console.log("[]...",div);
+     helpers: {
+         childFInder: function(div, key) {
+             //var div = App.elements.isMyProducts [productId];
+             console.log("[]...", div);
 
-    //         for(var i = 0; i < div.childNodes.length; i++) {
-    //             var child = div.childNodes [i];
-    
-    //             if (child.getAttribute("key") === key){
-    //             return child
-    //             }
-    //         } 
+             for(var i = 0; i < div.childNodes.length; i++) {
+                 var child = div.childNodes [i];
 
-    //     }
-    // },
+            if (child.getAttribute("key") === key){
+                 return child;
+                 }
+             } 
+
+         }
+
+     },
+
+        
 
     helpers: helpers,
     store: store,
@@ -37,9 +40,8 @@ var App = {
     controllers: controllers,
     elements: elements,
     
-    
 
 };
 
 
-//App.init();
+App.init();

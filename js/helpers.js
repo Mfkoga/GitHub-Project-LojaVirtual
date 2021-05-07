@@ -10,9 +10,9 @@ var helpers ={
     },
 
     includes: function(arr,name) {
-        for (var i=0; i < arr.lenght; i++) {
+        for (var i=0; i < arr.length; i++) {
         var item = arr[i];
-        console.log("[includes]...", item);
+        console.log("[includes]...", item.name, name);
 
         if (item.name === name) {
             return true;

@@ -1,5 +1,7 @@
 var controllers = {
     createElements: function () {
+        var els = App.elements
+
         console.log("Vamos renderizar");
 
         this.setStyle(App.elements.app, {
@@ -29,31 +31,14 @@ var controllers = {
        App.elements.bodyContainer.classList.add("bodyContainer");
        App.elements.app.appendChild(App.elements.bodyContainer);
 
-       //App.elements.categoryContainer.classList.add("categoryContainer");
-       App.elements.bodyContainer.appendChild(App.elements.categoryContainer);
        
-
        App.elements.category.classList.add("category");
-       App.elements.categoryContainer.appendChild(App.elements.category);
+       App.elements.bodyContainer.appendChild(App.elements.category);
        App.elements.category.innerHTML="Selecione por categoria: ";
-        
-       App.elements.iconsContainer.classList.add("iconsContainer");
-       App.elements.bodyContainer.appendChild(App.elements.iconsContainer);
 
-    
-       App.elements.iconsContainer.appendChild(App.elements.iconsbody);
-
-       App.elements.bodyImgClothes.classList.add("iconsbody");
-       App.elements.bodyImgClothes.src="https://i.pinimg.com/236x/0c/cf/d5/0ccfd5d8c0158af047a12c253aa10403.jpg";
-       App.elements.iconsbody.appendChild(App.elements.bodyImgClothes);
-
-       App.elements.bodyImgShoes.classList.add("iconsbody");
-       App.elements.bodyImgShoes.src="https://i.pinimg.com/originals/64/80/16/648016f3e2db66dce071407443838edd.jpg";
-       App.elements.iconsbody.appendChild(App.elements.bodyImgShoes);
-
-       App.elements.bodyImgAcessories.classList.add("iconsbody");
-       App.elements.bodyImgAcessories.src="https://i.pinimg.com/736x/22/20/3f/22203fdb04883c7b05105133e7286592--paper-bags-watercolor-painting.jpg";
-       App.elements.iconsbody.appendChild(App.elements.bodyImgAcessories);
+      App.elements.bodyCategories.classList.add("iconsbody")
+      App.elements.bodyContainer.appendChild(App.elements.bodyCategories);
+       
 
        App.elements.bodyMyProductsLabel.classList.add("bodyMyProductsLabel");
        App.elements.bodyMyProductsLabel.innerHTML = "Minha Comprinha:";
@@ -124,14 +109,9 @@ var controllers = {
         for (var i = 0; i < categories.length; i++){
             var category = categories [i];
             var el = this.createCategory(category);
-            // el.innerHTML = category.name;
 
-            // var img = document.createElement("img")
-            // img.src = category.image_url // App.elements.iconsbody
-            // el.appendChild(img);
-
-            // console.log ("[Categorias]...", category, el)
-            App.elements.bodyCategories.appendChild(el);
+            App.elements.bodyCategories.appendChild(el);          
+         
         }
     },
 
@@ -149,10 +129,12 @@ var controllers = {
             for (var i = 0; i < products.length; i++) {
             var product = products[i];
 
-            if (!App.elements.products[product.id]) {
-                var el = this.createProduct(product);
-                App.elements.products[product.id] = el;
-                App.elements.bodyProducts.appendChild(el);
+           // var el = this.createProduct(product)
+
+             if (!App.elements.products[product.id]) {
+                 var el = this.createProduct(product);
+                 App.elements.products[product.id] = el;
+                 App.elements.bodyProducts.appendChild(el);
 
              }
         }
@@ -160,101 +142,40 @@ var controllers = {
             console.log ("Todos os produtos renderizados");   
     }, 
 
-           //el.innerHTML = product.title;
-           //this.setStyle(el,{
-           //  padding: "10px",
-           // justifyContent: "space-between",
-           // float:"center",
-           //});
-           //  el.classList.add("product-item");
-           // console.log(product);
-           // this.renderImages(el, product.images)
-           // for(var i=0; i<product.images.length; i++){
-           //     var imgURL= product.images[i]
-           //     console.log(imgURL)
-           // }
-           
-        //    var imgContainer = document.createElement("div");
-        //    imgContainer.style.width = "200px";
-        //    imgContainer.style.height = "200px";
-                      
-        //    var carrossel = new Carrossel ({el:el, images: product.images});
-        //    el. appendChild(imgContainer);
-        
-        //    var title = document.createElement("div")
-        //    title.innerHTML = product.title
-        //    title.setAttribute("key","title");
-        //    this.setStyle(title,{border: "1px solid blue",
-        //                        //display: "flex",
-        //                        color: "red",
-        //                        //padding: "0px 0px 100px 0px",
-        //                        height:"100px",
-        //                        width:"300px"});//////////////////////////////
-        //    el.appendChild(title);
-
-
-         //  var description = document.createElement("div")
-         //  description.innerHTML = product.description;
-         //   description.setAttribute("key","description");
-         //  this.setStyle(description,{
-         //                        display: "flex",
-         //                       color: "red",
-         //                      padding: "20px",
-         //                      height:"100px",});//////////////////////////////
-         // el.appendChild(description);
-            
-
-    //         var price = document.createElement("div")
-    //         price.innerHTML = `R$ ${product.price}`;
-    //         price.setAttribute("key","price");
-    //         el.appendChild (price);
-
-    //         var count = document.createElement("div")
-    //         count.innerHTML = `Qtde:  ${product.count}`;
-    //         count.setAttribute("key","count");
-    //         el.appendChild (count);
-
-    //         var buyBtn = document.createElement("button");
-    //         buyBtn.innerHTML = "Comprar";
-    //         buyBtn.id = product.id
-    //         buyBtn.onclick = App.events.buy;
-            
-    //         el.appendChild(buyBtn);
-
-    //         console.log("[]...",el);
-
-    //         App.elements.products[product.id] = el;
-    //         App.elements.bodyProducts.appendChild(el);
-                        
-    //         }
-        
-    
-
-    //     console.log("Produtos renderizados!");
-    // },
+     
 
     renderMyProducts: function () {
+        //Pega todos os produtos
     var myProducts = App.store.state.myProducts;
-
+        //Pega todos os meus produtos já renderizados
     var els = App.elements.myProducts;
 
-    for (var i=0; i < myProducts.length; i++) {
+    for (var i = 0; i < myProducts.length; i++) {
         var myProduct = myProducts [i];
         var product = App.store.getters.productById(myProduct.productId);
         console.log(myProduct, product);
 
+        //se ja existe
     if (els[product.id]) {
 
+        //Editar o produto
         var child = App.helpers.childFinder (App.elements.myProducts [product.id], "count");
         if (child) {
-            var newCount = App.store.getters.myProductCount(product.id);
+           var newCount = parseInt(child.getAttribute("count")) +1;
+           // var newCount = App.store.getters.myProductCount(product.id);
 
-            child.innerHTML = `Qtd: ${newCount}`;
+             child.innerHTML = `Qtd: ${newCount}`;
+             
+             child.setAttribute("count", newCount);
+             console.log("novo child", child);
 
         }
-    }else {
+    }//Criar o produto
+    else {
         var el = this.createProduct(product,true);
         els[product.id] = el;
+        
+        el.classList.add("bodyMyProducts");////////////////////////////////////////Minha compra style
         App.elements.bodyMyProducts.appendChild(el);//bodyMyProducts.appendChild(el);///////////////////////////////////////////////////////
     }
     }
@@ -265,24 +186,28 @@ var controllers = {
     el.classList.add("product-item");
 
     var imgContainer = document.createElement("div");//
+    imgContainer.style.padding= "10px";
     imgContainer.style.width = "200px";//
     imgContainer.style.height = "200px";//
+
+
     var carrossel = new Carrossel ({el: imgContainer, images: product.images});//
     el.appendChild(imgContainer);//
-
-    var title = document.createElement("div");//
-    title.innerHTML = product.title;//
-    title.setAttribute("key", "title");//
-    el.appendChild(title);//
 
     var price = document.createElement("div");
     price.innerHTML = `R$ ${product.price}`;
     price.setAttribute("key", "price");
     el.appendChild(price);
 
-    if(!isMyList) {
+    if(!isMyList){
+
+        var title = document.createElement("div");
+        title.innerHTML = product.title;
+        title.setAttribute("key", "title");
+        el.appendChild(title);
+
         var count = document.createElement("div");
-        count.innerHTML = `Qtd: ${product.count}`;
+        count.innerHTML = `Qtd: ${product.count}`;/////////////////////////////////////////////Qtd
         count.setAttribute("key", "count");
         el.appendChild(count);
 
@@ -291,11 +216,16 @@ var controllers = {
         buyBtn.id = product.id;
         buyBtn.onclick = App.events.buy;
         el.appendChild(buyBtn);
-    }else {
+    }
+
+    else {
+        
         var count = document.createElement("div");
-        count.innerHTML = `Qt:1`;
+        count.innerHTML = `Qtd: 1`;
         count.setAttribute("key", "count");
+        //count.setAttribute("count", "1");
         el.appendChild(count);
+
     }
 
     console.log("[]...", el);

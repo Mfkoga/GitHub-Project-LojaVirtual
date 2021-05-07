@@ -3,10 +3,10 @@ var store = {
         products:[
     {
         id:1,
-        category: {name: "Vestido",
+        category: {name: "Dress",
                    image_url:"https://i.pinimg.com/236x/0c/cf/d5/0ccfd5d8c0158af047a12c253aa10403.jpg"},
         brand: "Farm",
-        title:"Vestido longo florido",
+        title:"Vestido midi florido",
         description: "Tamanho P",
         price: 150,
         count: 5,
@@ -17,12 +17,12 @@ var store = {
 
     {
         id:2,
-        category: {name: "Vestido",
+        category: {name: "Dress",
                   image_url:"https://i.pinimg.com/236x/0c/cf/d5/0ccfd5d8c0158af047a12c253aa10403.jpg"},
         brand: "Farm",
         title:"Vestido curto banana",
         description: "Vestido curto banana, tamanho M",
-        price: 152,
+        price: 120,
         count: 4,
         status: "Active",
         images:["https://d1ox9ey4a9b9h8.cloudfront.net/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/m/img_1775_1_20.jpg",
@@ -32,11 +32,11 @@ var store = {
 
     {
         id:3,
-        category: {name: "Vestido", 
+        category: {name: "Dress", 
                   image_url:"https://i.pinimg.com/236x/0c/cf/d5/0ccfd5d8c0158af047a12c253aa10403.jpg"},
         brand: "Farm",
-        title:"Vestido curto girassol",
-        description: "Vestido curto girassol, tamanho G",
+        title:"Vestido Longo Tucano",
+        description: "VVestido Longo Tucano, tamanho G",
         price: 153,
         count: 3,
         status: "Active",
@@ -49,12 +49,12 @@ var store = {
 
     {
         id:4,
-        category: {name: "Vestido",
+        category: {name: "Dress",
                    image_url:"https://i.pinimg.com/236x/0c/cf/d5/0ccfd5d8c0158af047a12c253aa10403.jpg"},
         brand: "Farm",
-        title:"Vestido curto girassol",
-        description: "Vestido curto girassol, tamanho GG",
-        price: 153,
+        title:"Vestido curto colorido",
+        description: "Vestido curto colorido, tamanho GG",
+        price: 120,
         count: 3,
         status: "Active",
         images:[
@@ -67,13 +67,13 @@ var store = {
 
     {
         id:5,
-        category: {name: "Bolsa",
-                   image_url:"https://i.pinimg.com/736x/22/20/3f/22203fdb04883c7b05105133e7286592--paper-bags-watercolor-painting.jpg"},
+        category: {name: "Bags",
+                   image_url:"https://img.etsystatic.com/il/2963b0/681832834/il_570xN.681832834_t98l.jpg"},
         brand: "Louis Vuitton",
         title:"Bolsa Louis Vuitton",
         description: "Bolsa Louis Vuitton",
-        price: 153,
-        count: 3,
+        price: 500,
+        count: 1,
         status: "Active",
         images:[
             "https://www.azusashop.com/wp-content/uploads/2018/10/img_0437_5.jpg",
@@ -84,12 +84,13 @@ var store = {
 
     {
         id:6,
-        category: {name: "Bolsa",
-                  image_url:"https://i.pinimg.com/736x/22/20/3f/22203fdb04883c7b05105133e7286592--paper-bags-watercolor-painting.jpg"},
+        category: {name: "Bags",
+                  image_url:"https://img.etsystatic.com/il/2963b0/681832834/il_570xN.681832834_t98l.jpg"},
+                  //"https://i.pinimg.com/736x/22/20/3f/22203fdb04883c7b05105133e7286592--paper-bags-watercolor-painting.jpg"},
         brand: "Louis Vuitton",
-        title:"Bolsa Louis Vuitton",
-        description: "Bolsa Louis Vuitton",
-        price: 153,
+        title:"Bolsa",
+        description: "Bolsa",
+        price: 200,
         count: 3,
         status: "Active",
         images:[
@@ -101,11 +102,11 @@ var store = {
         id:7,
         category: {name: "Shoes",
                    image_url: "https://i.pinimg.com/originals/64/80/16/648016f3e2db66dce071407443838edd.jpg"},
-        brand: "Chinelo",
-        title:"Bolsa Louis Vuitton",
-        description: "Bolsa Louis Vuitton",
-        price: 153,
-        count: 3,
+        brand: "Shoes",
+        title:"Chinelo Tucano - Farm",
+        description: "Chinelo Tucano - Farm",
+        price: 150,
+        count: 2,
         status: "Active",
         images:[
             "https://havainas.vteximg.com.br/arquivos/ids/225098-1000-1000/4144745_0090_C_Havaianas_Farm_Tucanissimo_Preto.jpg?v=636983850238700000",          
@@ -115,11 +116,11 @@ var store = {
         id:8,
         category: {name: "Shoes",
                    image_url: "https://i.pinimg.com/originals/64/80/16/648016f3e2db66dce071407443838edd.jpg"},
-        brand: "Tenis",
-        title:"Bolsa Louis Vuitton",
-        description: "Bolsa Louis Vuitton",
-        price: 153,
-        count: 3,
+        brand: "shoes",
+        title:"Tenis Vans Vinho",
+        description: "Tenis Vans Vinho",
+        price: 250,
+        count: 2,
         status: "Active",
         images:[
             "https://th.bing.com/th/id/Ra99cc48c6174263f3a0975e5c7e10633?rik=Ml6Ck8xAK6qRYw&pid=ImgRaw",       
@@ -131,11 +132,11 @@ var store = {
         id:9,
         category: {name: "Shoes",
                    image_url:"https://i.pinimg.com/originals/64/80/16/648016f3e2db66dce071407443838edd.jpg"},
-        brand: "Tenis",
-        title:"Bolsa Louis Vuitton",
-        description: "Bolsa Louis Vuitton",
-        price: 153,
-        count: 3,
+        brand: "Shoes",
+        title:"Tenis Adidas Branco",
+        description: "Tenis Adidas Branco",
+        price: 250,
+        count: 4,
         status: "Active",
         images:[
             "https://img.abcelectronique.com/chaussures-sportswear-femmes/5733085850092/adidas-superstar-farm-company-blanche-et-bleu-marine-baskets-tennis.jpg",       
@@ -161,7 +162,6 @@ getters:{
 
             if (product.id === productId){
                 return product;
-
             }
         }
 
@@ -170,41 +170,48 @@ getters:{
 
     myProductCount: function (productId) {
         var count = 0;
-        for (var i =0; i < store.state.myProducts.length; i++) {
-            var myProduct = store.state.myProducts [i];
+        for (var i = 0; i < App.store.state.myProducts.length; i++) {
+            var myProduct = App.store.state.myProducts[i];
             if (myProduct.productId === productId) {
                 count ++;
             }
         }
     return count;
     },
-    
-    categories: function() {
-    var products = App.store.state.products;
-    var categories = [];
 
-    for(var i = 0; i < products.length; i++){
-        var product = products[i];
 
-        if(!App.helpers.includes(categories, product.category.name)){//!
-       
-        categories.push(product.category);
-    } 
-    }
+    categories: function () {
+        var products = App.store.state.products;
+        var categories = [];
 
+        for (var i=0; i< products.length; i++) {
+            var product = products[i];
+
+            if (!App.helpers.includes(categories, product.category.name)) {
+                categories.push(product.category);
+            }
+        }
         return categories;
     },
+    
 
-products: function() {
-        var products = store.state.products;
-        var filter = store.state.filter;
 
+    products: function() {
+    //reg dos produtos e filtros
+        var products = App.store.state.products;
+        var filter = App.store.state.filter;
+
+        //array de resposta
         var res = [];
 
+        //loop nos produtos
         for(var i = 0; i < products.length; i++){
             var product = products[i]
 
-            
+        //verifica category no filtro
+
+        //compara a categoria do filtro e do produto. Sendo diferente, pula 
+
             if (filter.category && filter.category !== product.category.name) {
                // console.log("[NÃO!!!]]...", product.category);
                 continue;
@@ -246,29 +253,31 @@ products: function() {
 
 
 
-// category: function() {
-//     var products = App.store.state.products;
-//     var category = []
+ category: function() {
+     var products = App.store.state.products;
+     var categories = [];
 
-//     for(var i=0; i< products.length; i++){
-//         var product = products[i];
-//         console.log("[category:]...", product.category);
-//         category.push(product.category)
+     for(var i=0; i< products.length; i++){
+         var product = products[i];
+         console.log("[CATEGORIA:]...", product.category);
+         
+         if (!App.helpers.includes(categories, product.category.name)) {
+             categories.push(product.category);
+         }
+         }
 
-//         }
-
-//         return category;
-//     },
+         return categories;
+     },
 
 //},
 
 //Alteração state
 mutations: {
-    ChangeCount: function(productId, newCount){
-        var product = store.getters.productById(productId);
-       // console.log(product.count);
+    ChangeCount: function (productId, newCount) {
+        var product = App.store.getters.productById(productId);
+        console.log(product.count);
         product.count = newCount;
-       // console.log(product.count);
+        console.log(product.count);
         },
 
     buy:  function (product) {
@@ -277,11 +286,11 @@ mutations: {
             price: product.price,
             count: 1,
         };
-        store.state.myProducts.push(myProduct);
+        App.store.state.myProducts.push(myProduct);
     },
 
     setCategory: function(categoryName) {
-        store.state.filter.category = categoryName
+        App.store.state.filter.category = categoryName
 
 
     }
